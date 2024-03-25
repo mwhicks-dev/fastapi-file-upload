@@ -3,6 +3,7 @@ from uuid import uuid4, UUID
 import uvicorn
 
 from fastapi import FastAPI, UploadFile, Depends
+from fastapi.responses import FileResponse
 
 from sqlalchemy.orm import Session
 
@@ -52,9 +53,7 @@ def read_file(id: UUID, db: Session = Depends(get_db)):
     )
 
     # Get file at path
-    file = UploadFile(file=open(file_model.path, "rb"))
-
-    return {'upload_file' : file}
+    return FileResponse(file_model.path)
 
 
 if __name__ == '__main__':
