@@ -7,8 +7,8 @@ from fastapi.responses import FileResponse
 
 from sqlalchemy.orm import Session
 
-from sql import SessionLocal, engine
-import schema, model
+from src.sql import SessionLocal, engine
+import src.schema, src.model
 
 from model import Base
 
