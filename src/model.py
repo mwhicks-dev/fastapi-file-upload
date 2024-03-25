@@ -2,7 +2,7 @@ from uuid import UUID
 
 from sqlalchemy.orm import Mapped, mapped_column
 
-from src.sql import Base
+from .sql import Base
 
 class FileModel(Base):
     __tablename__ = "files"
