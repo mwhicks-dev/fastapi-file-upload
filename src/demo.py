@@ -1,7 +1,5 @@
 from uuid import uuid4, UUID
 
-import uvicorn
-
 from fastapi import FastAPI, UploadFile, Depends
 from fastapi.responses import FileResponse
 
@@ -53,11 +51,3 @@ def read_file(id: UUID, db: Session = Depends(get_db)):
 
     # Get file at path
     return FileResponse(model.path)
-
-
-if __name__ == '__main__':
-    uvicorn.run(
-        app,
-        host="0.0.0.0",
-        reload=False
-    )
