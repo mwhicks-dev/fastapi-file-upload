@@ -4,4 +4,4 @@ COPY . /home
 
 RUN pip install -r /home/src/requirements.txt
 
-ENTRYPOINT python /home/main.py
+ENTRYPOINT python /home/src/main.py
